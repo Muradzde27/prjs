@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Çalışma</title>
+  <style>
+    body {
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    .block {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Çalışma</h1>
+  <div id="transactions"></div>
+
+  <script>
+    fetch('https://acb-api.algoritmika.org/api/transaction')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('transactions');
+        data.forEach(tx => {
+          const block = document.createElement('div');
+          block.className = 'block';
+          block.textContent = `${tx.from} ${tx.to} ${tx.amount} dollar ödəniş köçürüldü`;
+          container.appendChild(block);
+        });
+      })
+      .catch(error => {
+        document.getElementById('transactions').textContent = 'Xəta baş verdi!';
+        console.error(error);
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input to Console</title>
+</head>
+
+<body>
+    <div>
+        <label for="userInput">Enter your name:</label>
+        <input type="text" id="userInput" placeholder="Name">
+
+        <br><br>
+
+        <label for="userInput2">Enter your Message</label>
+        <input type="text" id="userInput2" placeholder="Message">
+
+        <button id="sendButton">Send</button>
+    </div>
+
+    <script>
+        const inputElement = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+
+        const inputElement2 = document.getElementById('userInput2');
+        const sendButton2 = document.getElementById('sendButton2');
+
+        sendButton.addEventListener('click', () => {
+            const inputValue = inputElement.value;
+            console.log(inputValue);
+        });
+
+        sendButton.addEventListener('click', () => {
+            const inputValue2 = inputElement2.value;
+            console.log(inputValue2);
+        });
+    </script>
+</body>
+
+</html>

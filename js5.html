@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2</title>
+</head>
+<body>
+  <h1>Task 2</h1>
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <script>
+    const ulElement = document.getElementById('myList');
+    console.log('Main element (ul):', ulElement);
+
+    const previousElement = ulElement.previousElementSibling;
+    console.log('Previous element:', previousElement);
+
+    const childElements = ulElement.children;
+    console.log('Secondary elements:', childElements);
+
+    const firstChildElement = ulElement.firstElementChild;
+    console.log('First secondary element', firstChildElement);
+  </script>
+</body>
+</html>
